@@ -1,4 +1,5 @@
 package com.nnk.springboot.dto;
+
 import jakarta.validation.constraints.NotBlank;
 
 public class RuleNameDto {

@@ -6,32 +6,26 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "RuleName")
 public class RuleName {
-    public RuleName() {
-
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
     private Integer id;
-
     @Column(name = "name")
     private String name;
-
     @Column(name = "description")
     private String description;
-
     @Column(name = "json")
     private String json;
-
     @Column(name = "template")
     private String template;
-
     @Column(name = "sqlStr")
     private String sqlStr;
-
     @Column(name = "sqlPart")
     private String sqlPart;
+
+    public RuleName() {
+
+    }
 
     public RuleName(String ruleName, String description, String json, String template, String sql, String sqlPart) {
         this.name = ruleName;

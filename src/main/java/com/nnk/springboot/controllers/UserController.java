@@ -1,8 +1,8 @@
 package com.nnk.springboot.controllers;
 
-import com.nnk.springboot.services.UserService;
 import com.nnk.springboot.domain.User;
 import com.nnk.springboot.dto.UserDto;
+import com.nnk.springboot.services.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -18,7 +18,7 @@ import java.util.Optional;
 
 @Controller
 public class UserController {
-   @Autowired
+    @Autowired
     private UserService userService;
 
 
@@ -62,7 +62,7 @@ public class UserController {
         }
     }
 
-   @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/showFormForUpdate/{id}")
     public String showFormForUserUpdate(@PathVariable(value = "id") Integer id, Model model) {
         try {
@@ -99,6 +99,7 @@ public class UserController {
             return "updateUser";
         }
     }
+
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/deleteUser/{id}")
     public String deleteEmployee(@PathVariable(value = "id") Integer id) {

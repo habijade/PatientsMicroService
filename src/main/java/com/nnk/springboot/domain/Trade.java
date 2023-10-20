@@ -8,6 +8,51 @@ import java.util.Date;
 @Entity
 @Table(name = "Trade")
 public class Trade {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "TradeId")
+    private Integer tradeId;
+    @Column(name = "account", nullable = false)
+    private String account;
+    @Column(name = "type", nullable = false)
+    private String type;
+    @Column(name = "buyQuantity")
+    private Double buyQuantity;
+    @Column(name = "sellQuantity")
+    private Double sellQuantity;
+    @Column(name = "buyPrice")
+    private Double buyPrice;
+    @Column(name = "sellPrice")
+    private Double sellPrice;
+    @Column(name = "tradeDate")
+    private Date tradeDate;
+    @Column(name = "security")
+    private String security;
+    @Column(name = "status")
+    private String status;
+    @Column(name = "trader")
+    private String trader;
+    @Column(name = "benchmark")
+    private String benchmark;
+    @Column(name = "book")
+    private String book;
+    @Column(name = "creationName")
+    private String creationName;
+    @Column(name = "creationDate")
+    private Date creationDate;
+    @Column(name = "revisionName")
+    private String revisionName;
+    @Column(name = "revisionDate")
+    private Date revisionDate;
+    @Column(name = "dealName")
+    private String dealName;
+    @Column(name = "dealType")
+    private String dealType;
+    @Column(name = "sourceListId")
+    private String sourceListId;
+    @Column(name = "side")
+    private String side;
+
     public Trade() {
 
     }
@@ -15,75 +60,6 @@ public class Trade {
     public Trade(String account, String type) {
         this.account = account;
         this.type = type;
-    }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "TradeId")
-    private Integer tradeId;
-
-    @Column(name = "account", nullable = false)
-    private String account;
-
-    @Column(name = "type", nullable = false)
-    private String type;
-
-    @Column(name = "buyQuantity")
-    private Double buyQuantity;
-
-    @Column(name = "sellQuantity")
-    private Double sellQuantity;
-
-    @Column(name = "buyPrice")
-    private Double buyPrice;
-
-    @Column(name = "sellPrice")
-    private Double sellPrice;
-
-    @Column(name = "tradeDate")
-    private Date tradeDate;
-
-    @Column(name = "security")
-    private String security;
-
-    @Column(name = "status")
-    private String status;
-
-    @Column(name = "trader")
-    private String trader;
-
-    @Column(name = "benchmark")
-    private String benchmark;
-
-    @Column(name = "book")
-    private String book;
-
-    @Column(name = "creationName")
-    private String creationName;
-
-    @Column(name = "creationDate")
-    private Date creationDate;
-
-    @Column(name = "revisionName")
-    private String revisionName;
-
-    @Column(name = "revisionDate")
-    private Date revisionDate;
-
-    @Column(name = "dealName")
-    private String dealName;
-
-    @Column(name = "dealType")
-    private String dealType;
-
-    @Column(name = "sourceListId")
-    private String sourceListId;
-
-    @Column(name = "side")
-    private String side;
-
-    public Integer getTradeId() {
-        return tradeId;
     }
 
     public Trade(Integer tradeId, String account, String type, Double buyQuantity, Double sellQuantity, Double buyPrice, Double sellPrice, Date tradeDate, String security, String status, String trader, String benchmark, String book, String creationName, Date creationDate, String revisionName, Date revisionDate, String dealName, String dealType, String sourceListId, String side) {
@@ -108,6 +84,10 @@ public class Trade {
         this.dealType = dealType;
         this.sourceListId = sourceListId;
         this.side = side;
+    }
+
+    public Integer getTradeId() {
+        return tradeId;
     }
 
     public void setTradeId(Integer tradeId) {

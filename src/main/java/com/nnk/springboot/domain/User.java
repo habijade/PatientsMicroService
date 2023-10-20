@@ -14,10 +14,6 @@ import java.util.List;
 @Table(name = "Users")
 public class User implements UserDetails {
 
-    public User() {
-
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id", updatable = false)
@@ -30,6 +26,9 @@ public class User implements UserDetails {
     private String fullName;
     @NotBlank(message = "Role is mandatory")
     private String role;
+    public User() {
+
+    }
 
     public User(Integer id, String username, String password, String fullName, String role) {
         this.id = id;
@@ -51,6 +50,10 @@ public class User implements UserDetails {
         return username;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     @Override
     public boolean isAccountNonExpired() {
         return true;
@@ -69,10 +72,6 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     @Override

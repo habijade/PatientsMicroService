@@ -8,6 +8,21 @@ import java.util.Date;
 @Entity
 @Table(name = "CurvePoint")
 public class CurvePoint {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
+    private Integer id;
+    @Column(name = "CurveId")
+    private Integer curveId;
+    @Column(name = "asOfDate")
+    private Date asOfDate;
+    @Column(name = "term")
+    private Double term;
+    @Column(name = "value")
+    private Double value;
+    @Column(name = "creationDate")
+    private Date creationDate;
+
     public CurvePoint() {
 
     }
@@ -16,26 +31,6 @@ public class CurvePoint {
         this.curveId = curveId;
         this.term = term;
     }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
-    private Integer id;
-
-    @Column(name = "CurveId")
-    private Integer curveId;
-
-    @Column(name = "asOfDate")
-    private Date asOfDate;
-
-    @Column(name = "term")
-    private Double term;
-
-    @Column(name = "value")
-    private Double value;
-
-    @Column(name = "creationDate")
-    private Date creationDate;
 
     public CurvePoint(Integer id) {
         this.id = id;

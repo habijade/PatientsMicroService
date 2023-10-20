@@ -122,9 +122,9 @@ public class BidList {
     }
 
     public BidList(String account, String type, double bifQuantity) {
-        this.account=account;
-        this.type=type;
-        this.bidQuantity= bifQuantity;
+        this.account = account;
+        this.type = type;
+        this.bidQuantity = bifQuantity;
     }
 
     public Integer getBidListId() {
