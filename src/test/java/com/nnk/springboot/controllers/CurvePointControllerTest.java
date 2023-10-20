@@ -66,7 +66,7 @@ public class CurvePointControllerTest {
     }
 
     @Test
-    public void showFormForCurvePointListUpdateWhenCurvePointPresentReturnsUpdateCurvePointView() {
+    public void showFormForCurvePointListUpdateWhenCurvePointReturnsUpdateCurvePointView() {
         when(curvePointService.getCurvePointById(anyInt())).thenReturn(Optional.of(new CurvePoint()));
 
         String viewName = controller.formForCurvePointListUpdate(1, model);

@@ -64,7 +64,7 @@ public class RuleControllerTest {
     }
 
     @Test
-    public void updateRuleName_whenResultHasErrors_returnsUpdateRuleNameView() {
+    public void updateRuleNameWhenResultHasErrorsReturnsUpdateRuleNameView() {
         when(bindingResult.hasErrors()).thenReturn(true);
 
         String viewName = controller.updateRuleName(1, new RuleNameDto(), bindingResult);
@@ -73,7 +73,7 @@ public class RuleControllerTest {
     }
 
     @Test
-    public void updateRuleName_whenResultHasNoErrorsAndNoExceptions_returnsRedirectRuleNameHomePageView() {
+    public void updateRuleNameWhenResultHasNoErrorsAndNoExceptionsReturnsRedirectRuleNameHomePageView() {
         when(bindingResult.hasErrors()).thenReturn(false);
 
         String viewName = controller.updateRuleName(1, new RuleNameDto(), bindingResult);
@@ -82,7 +82,7 @@ public class RuleControllerTest {
     }
 
     @Test
-    public void showFormForRuleNameUpdate_whenRuleNameExists_returnsUpdateRuleNameView() {
+    public void showFormForRuleNameUpdateWhenRuleNameExistsReturnsUpdateRuleNameView() {
         // Given
         RuleName ruleName = new RuleName();
         ruleName.setName("RuleName1");

@@ -95,7 +95,7 @@ public class BidListControllerTest {
     }
 
     @Test
-    public void showFormForBidListUpdateWhenBidListPresentReturnsUpdateBidListView() {
+    public void showFormForBidListUpdateWhenBidListReturnsUpdateBidListView() {
         when(bidListService.findById(anyInt())).thenReturn(Optional.of(new BidList()));
 
         String viewName = controller.formForBidListUpdate(1, model);

@@ -64,7 +64,7 @@ public class RatingControllerTest {
     }
 
     @Test
-    public void updateRating_whenNoErrorsInForm_returnsRedirectRatingHomePageView() {
+    public void updateRatingWhenNoErrorsInFormReturnsRedirectRatingHomePageView() {
         RatingDto ratingDto = new RatingDto();
         ratingDto.setFitchRating("FitchRating");
         ratingDto.setOrderNumber("2");

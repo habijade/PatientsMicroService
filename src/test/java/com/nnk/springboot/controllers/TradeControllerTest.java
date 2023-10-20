@@ -58,7 +58,7 @@ public class TradeControllerTest {
         assertEquals("newTrade", view);
     }
     @Test
-    public void saveTrade_whenTradeDtoValid_returnsRedirectTradeHomePageView() {
+    public void saveTradeWhenTradeDtoValidReturnsRedirectTradeHomePageView() {
         // Given
         TradeDto tradeDto = new TradeDto();
         tradeDto.setAccount("Account");
@@ -79,7 +79,7 @@ public class TradeControllerTest {
     }
 
     @Test
-    public void showFormForTradeUpdate_whenTradeExists_returnsUpdateTradeView() {
+    public void showFormForTradeUpdateWhenTradeExistsReturnsUpdateTradeView() {
         Trade trade = new Trade();
         trade.setAccount("TradeAccount");
         when(tradeService.getTradeById(anyInt())).thenReturn(Optional.of(trade));
@@ -90,7 +90,7 @@ public class TradeControllerTest {
     }
 
     @Test
-    public void updateTrade_whenNoErrorsInForm_returnsRedirectTradeHomePageView() {
+    public void updateTradeWhenNoErrorsInFormReturnsRedirectTradeHomePageView() {
         TradeDto tradeDto = new TradeDto();
         tradeDto.setAccount("TradeAccount");
         tradeDto.setTradeId("1");
