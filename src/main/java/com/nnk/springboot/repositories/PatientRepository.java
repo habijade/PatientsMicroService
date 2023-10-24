@@ -1,4 +1,4 @@
-package com.nnk.springboot.repository;
+package com.nnk.springboot.repositories;
 
 import com.nnk.springboot.modeles.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
